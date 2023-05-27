@@ -8,7 +8,7 @@ import wget
 import json
 
 from datetime import datetime
-from apscheduler.schedulers.blocking import BlockingScheduler
+#from apscheduler.schedulers.blocking import BlockingScheduler
 
 from config import * # imports variables from config.py, this file needs to be configured
 
@@ -47,12 +47,8 @@ def main():
 
     message  += "\n" + "\N{High Voltage Sign}" + "Data hämtad från elprisetjustnu.se" + "\N{High Voltage Sign}" 
     print(message)
-    # runBot = twitterBot.bot(message)
+    runBot = twitterBot.bot(message)
 
-def atRestart(day, month, hour, path):
-        getFiles.downloadAndRemove(day, month, year, path) # Removes and downloads new and old .json files
-
-atRestart(day, month, hour, path)
 main()
 
 #scheduler = BlockingScheduler()
